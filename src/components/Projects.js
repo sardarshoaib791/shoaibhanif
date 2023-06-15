@@ -11,12 +11,12 @@ export const Projects = () => {
 
   const projects = [
     {
-      title: "Business Startup",
+      title: "IMDb Website",
       description: "Design & Development",
       imgUrl: projImg1,
     },
     {
-      title: "Business Startup",
+      title: "Medicosconnect App",
       description: "Design & Development",
       imgUrl: projImg2,
     },
