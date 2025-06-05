@@ -12,13 +12,54 @@ export const Contact = () => {
     phone: "",
     message: "",
   };
+
   const [formDetails, setFormDetails] = useState(formInitialDetails);
+  const [buttonText, setButtonText] = useState("Send");
+  const [status, setStatus] = useState({});
 
   const onFormUpdate = (category, value) => {
     setFormDetails({
       ...formDetails,
       [category]: value,
     });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setButtonText("Sending...");
+
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/shoaibhanif910@gmail.com",
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      );
+
+      if (response.ok) {
+        setStatus({ success: true, message: "✔ Message sent successfully!" });
+        setFormDetails(formInitialDetails);
+        e.target.reset(); // reset native form
+      } else {
+        setStatus({
+          success: false,
+          message: "✘ Something went wrong. Please try again.",
+        });
+      }
+    } catch (error) {
+      setStatus({
+        success: false,
+        message: "✘ Network error. Please try again.",
+      });
+    }
+
+    setButtonText("Send");
   };
 
   return (
@@ -47,10 +88,7 @@ export const Contact = () => {
                   }
                 >
                   <h2>Get In Touch</h2>
-                  <form
-                    action="https://formsubmit.co/shoaibhanif910@gmail.com"
-                    method="POST"
-                  >
+                  <form onSubmit={handleSubmit}>
                     <input type="hidden" name="_captcha" value="false" />
                     <Row>
                       <Col size={12} sm={6} className="px-1">
@@ -112,9 +150,20 @@ export const Contact = () => {
                           required
                         ></textarea>
                         <button type="submit">
-                          <span>Send</span>
+                          <span>{buttonText}</span>
                         </button>
                       </Col>
+                      {status.message && (
+                        <Col>
+                          <p
+                            className={
+                              status.success === false ? "danger" : "success"
+                            }
+                          >
+                            {status.message}
+                          </p>
+                        </Col>
+                      )}
                     </Row>
                   </form>
                 </div>
