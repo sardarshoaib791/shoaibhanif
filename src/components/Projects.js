@@ -3,6 +3,10 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import projImg4 from "../assets/img/project-img4.png";
+import projImg5 from "../assets/img/project-img5.png";
+import projImg6 from "../assets/img/project-img6.png";
+import projImg7 from "../assets/img/project-img7.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -23,6 +27,32 @@ export const Projects = () => {
       title: "IMDb Website (clone)",
       description: "Design & Development",
       imgUrl: projImg1,
+    },
+  ];
+
+  const projects2 = [
+    {
+      title: "Online Shoes Store",
+      description: "Design & Development",
+      imgUrl: projImg4,
+    },
+    {
+      title: "Food Delivery",
+      description: "Design & Development",
+      imgUrl: projImg5,
+    },
+    {
+      title: "Feed-U Mobile App",
+      description: "Design & Development",
+      imgUrl: projImg6,
+    },
+  ];
+
+  const projects3 = [
+    {
+      title: "Stride Up Real estate",
+      description: "Design & Development",
+      imgUrl: projImg7,
     },
   ];
 
@@ -51,6 +81,7 @@ export const Projects = () => {
                       variant="pills"
                       className="nav-pills mb-5 justify-content-center align-items-center"
                       id="pills-tab"
+                      style={{ cursor: "pointer" }}
                     >
                       <Nav.Item>
                         <Nav.Link eventKey="first">Tab 1</Nav.Link>
@@ -77,14 +108,14 @@ export const Projects = () => {
                       </Tab.Pane>
                       <Tab.Pane eventKey="second">
                         <Row>
-                          {projects.map((project, index) => {
+                          {projects2.map((project, index) => {
                             return <ProjectCard key={index} {...project} />;
                           })}
                         </Row>
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
                         <Row>
-                          {projects.map((project, index) => {
+                          {projects3.map((project, index) => {
                             return <ProjectCard key={index} {...project} />;
                           })}
                         </Row>
