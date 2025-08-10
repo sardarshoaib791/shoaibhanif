@@ -7,6 +7,7 @@ import projImg4 from "../assets/img/project-img4.png";
 import projImg5 from "../assets/img/project-img5.png";
 import projImg6 from "../assets/img/project-img6.png";
 import projImg7 from "../assets/img/project-img7.png";
+import projImg8 from "../assets/img/project-img8.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -17,16 +18,19 @@ export const Projects = () => {
       title: "Medicosconnect App",
       description: "Design & Development",
       imgUrl: projImg2,
+      link: "https://medicosconnect.com/",
     },
     {
       title: "12u12",
       description: "Development for Web & Mobile",
       imgUrl: projImg3,
+      link: "https://app-dev.12u12.com/",
     },
     {
       title: "IMDb Website (clone)",
       description: "Design & Development",
       imgUrl: projImg1,
+      link: "https://clon-imdb1.netlify.app/",
     },
   ];
 
@@ -35,16 +39,19 @@ export const Projects = () => {
       title: "Online Shoes Store",
       description: "Design & Development",
       imgUrl: projImg4,
+      link: "https://online-shoes-store.netlify.app/",
     },
     {
-      title: "Food Delivery",
+      title: "Food Delivery (clone)",
       description: "Design & Development",
       imgUrl: projImg5,
+      link: "https://food-delivery-using-tailwind.vercel.app/",
     },
     {
       title: "Feed-U Mobile App",
       description: "Design & Development",
       imgUrl: projImg6,
+      link: "https://play.google.com/store/apps/details?id=com.feedu",
     },
   ];
 
@@ -53,6 +60,13 @@ export const Projects = () => {
       title: "Stride Up Real estate",
       description: "Design & Development",
       imgUrl: projImg7,
+      link: "https://www.strideup.co/",
+    },
+    {
+      title: "Vidly Movie App",
+      description: "Design & Development",
+      imgUrl: projImg8,
+      link: "https://vidlymovvies.netlify.app/movies",
     },
   ];
 
